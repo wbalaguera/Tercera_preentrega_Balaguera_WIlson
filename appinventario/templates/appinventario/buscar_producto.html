@@ -1,0 +1,21 @@
+
+
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <!--Aquí va lo que cambia, y lo asociado a esta vista :)-->
+    
+    <p style="color:rgb(7, 45, 95)">Busque el nombre del producto (Ejm:silla) </p>
+
+    <!--Aquí va lo que cambia, y lo asociado a esta vista   va la action a la view buscarprod:)-->
+    <form action="/appinventario/buscarprod/" method="GET">
+    
+        <input type="text" name="nombreproducto" id="nombreproducto">
+        <input type="submit" value="Buscar">
+        
+    </form>
+    
+{% endblock %}

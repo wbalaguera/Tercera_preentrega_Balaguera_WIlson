@@ -1,0 +1,18 @@
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    {% for p in productos %}
+        <li style="color:rgb(227, 243, 7)" >{{p}}</li>
+            <button  style="background-color:rgb(11, 3, 77);color:rgb(228, 231, 17)">
+                <a href="{% url 'EliminarProductos' p.nombreproducto %}"> Eliminar</a>
+                <a href="{% url 'EditarProductos' p.nombreproducto %}"> Editar</a>
+            </button>
+        {% endfor %}
+    <br>
+    
+    <a href="{% url 'LeerProductos' %}" class="button" ;style="color:white"> Volver al listado</a>    
+
+{% endblock %}

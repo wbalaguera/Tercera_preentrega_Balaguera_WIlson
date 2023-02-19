@@ -1,0 +1,17 @@
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+  
+    <p style="color:rgb(190, 233, 37)">idproveedor: <i>{{proveedor.idproveedor}}</i></p>
+    <p style="color:rgb(190, 233, 37)">Empresa: <i>{{proveedor.empresa}}</i></p>
+    <p style="color:rgb(190, 233, 37)">Actividad: <i>{{proveedor.actividad}}</i></p>
+    <p style="color:rgb(190, 233, 37)">Email <i>{{proveedor.email}}</i></p>
+    <p style="color:rgb(190, 233, 37)">Contacto: <i>{{proveedor.contacto}}</i></p>
+    <p>
+        <a href="{% url 'ListProveedor' %}" class="button" style="color: white">Regresar</a>
+    </p>
+    
+{% endblock %}

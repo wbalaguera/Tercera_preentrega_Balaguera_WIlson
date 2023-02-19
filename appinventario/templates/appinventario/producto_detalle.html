@@ -1,0 +1,20 @@
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+  
+    <p  style="color:rgb(7, 45, 95)">idproducto: <i>{{producto.idproducto}}</i></p>
+    <p  style="color:rgb(7, 45, 95)">Producto: <i>{{producto.nombreproducto}}</i></p>
+    <p  style="color:rgb(7, 45, 95)">Valor: <i>{{producto.precio}}</i></p>
+    <p  style="color:rgb(7, 45, 95)">Tipo Producto: <i>{{producto.tipo}}</i></p>
+    <p  style="color:rgb(7, 45, 95)">Existencias en bodega: <i>{{producto.existencias}}</i></p>
+    <p  style="color:rgb(7, 45, 95)">idbodega: <i>{{producto.idbodega}}</i></p>
+    <p  style="color:rgb(7, 45, 95)">idproveedor: <i>{{producto.idproveedor}}</i></p>
+    
+    <p>
+        <a href="{% url 'ListProducto' %}" class="button" style="color: white">Regresar</a>
+    </p>
+    
+{% endblock %}

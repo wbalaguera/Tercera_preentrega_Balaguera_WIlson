@@ -1,0 +1,35 @@
+
+
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<p style="color:rgb(7, 45, 95)" ><b> Estamos buscando el producto: </b> {{nombreproducto}}</p>
+
+{% if productos %}
+
+<ul style="color:rgb(7, 45, 95)">
+{% for producto in productos %}
+        <h3> <b style="color:rgb(7, 45, 95)">Resultado de Producto: </b> </h3>
+        <li  > <b>Producto: </b> {{producto.nombreproducto}}</li>
+        <li> <b>Precio: </b>  {{producto.precio}}</li>
+        <li> <b>Tipo de Producto: </b>{{producto.tipo}}</li>
+        <li> <b>Existencia en Bodega: </b>{{producto.existencias}}</li>
+        <li> <b>Precio: </b> {{producto.precio}}</li>
+      
+{% endfor %}
+
+
+</ul>
+{% else %}
+<p>No hay datos con esa descripción.</p>
+
+{% endif %}
+
+<p style="color: red;">{{respuesta}}</p>
+
+<a href="{% url 'Inicio' %}" class="button" style="color:white"> Volver </a>
+    
+{% endblock %}

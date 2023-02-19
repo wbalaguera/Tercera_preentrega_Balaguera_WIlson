@@ -1,0 +1,21 @@
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<h3> <b style="color:rgb(7, 45, 95)">Listado de Poveedores</b> </h3>
+    {% for proveedor in object_list %}
+    <li>
+        <p style="color:rgb(7, 45, 95)" >Empresa: {{proveedor.empresa}}</p>
+        <p>
+
+            <a href="{% url 'DetailProveedor' proveedor.id %}" class="button" style="color: white"> Ver</a>
+            <a href="{% url 'EditProveedor' proveedor.id %}" class="button" style="color: white"> Editar</a>
+            <a href="{% url 'DeleteProveedor' proveedor.id %}" class="button" style="color: white"> Borrar</a>
+            
+        </p>
+    </li>
+    {% endfor %}
+    <a href="{% url 'NewProveedor' %}" class="button" style="color: yellow; font-size: 20px;"> Insertar Nuevo Proveedor</a>
+
+{% endblock %}

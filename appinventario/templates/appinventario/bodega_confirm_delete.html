@@ -1,0 +1,15 @@
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <form method="post">
+        {% csrf_token %}
+        ¿Estas seguro que deseas borrar el curso "{{object}}"?
+        <input type="submit" value="Borrar" />
+    </form>
+
+    
+{% endblock %}

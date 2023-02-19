@@ -1,0 +1,20 @@
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+  
+    <p >idbodega: <i>{{bodega.idbodega}}</i></p>
+    <p style="color:rgb(7, 45, 95)" >Bodega: <i>{{bodega.nombrebodega}}</i></p>
+    <p style="color:rgb(7, 45, 95)" >Ubicacion: <i>{{bodega.ubicacion}}</i></p>
+
+    <p style="color:rgb(7, 45, 95)"> <b>Mapa </b></p>
+    <img src="{% static "appinventario/media/mapa chapinero.PNG" %}" alt="Bogota D.C ,Chapinero" width="700" height="450">
+
+    
+    <p>
+        <a href="{% url 'ListBodega' %}" class="button" style="color: white">Regresar</a>
+    </p>
+    
+{% endblock %}

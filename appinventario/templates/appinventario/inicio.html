@@ -1,0 +1,16 @@
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <!--Aquí va lo que cambia, y lo asociado a esta vista :)-->
+    <p style="color:rgb(248, 248, 245); background-color: rgb(43, 64, 184);">Encuentra todos los muebles en Mi Appinventario a tu gusto</p>
+    <p style="color:rgb(7, 45, 95)">Encuentra todos los muebles  para tu hogar ,comedor , sillas ,Sofas Elegante todod a la medida para tu hermosa casa</p>
+    <p style="color:rgb(7, 45, 95)"> <b>Todos tus muebles en una sola APP </b></p>
+        <img src="{% static "appinventario/media/SOFA.jpg" %}" alt="Sofa" width="200" height="150">
+        <img src="{% static "appinventario/media/SILLA.jpg" %}" alt="Silla" width="200" height="150">
+        <img src="{% static "appinventario/media/COMEEDOR.jpg" %}" alt="Comedor" width="200" height="150">
+        <img src="{% static "appinventario/media/ESCRITORO.jpg" %}" alt="Sofa" width="200" height="150">
+
+{% endblock %}

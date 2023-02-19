@@ -1,0 +1,13 @@
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <form style="color:rgb(7, 45, 95)"  method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enviar" class="button" style="color: white" />
+    </form>
+        
+{% endblock %}

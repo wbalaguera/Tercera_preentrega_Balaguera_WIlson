@@ -1,0 +1,35 @@
+
+
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<p style="color:rgb(7, 45, 95)" ><b> Estamos buscando el Proveedor: </b> {{empresa}}</p>
+
+{% if proveedores %}
+
+<ul style="color:rgb(7, 45, 95)">
+{% for proveedor in proveedores %}
+        <h3> <b style="color:rgb(7, 45, 95)">Resultado de empresa: </b> </h3>
+        <li> <b>Empresa: </b> {{proveedor.empresa}}</li>
+        <li> <b>Actividad: </b>  {{proveedor.actividad}}</li>
+        <li> <b>Concacto: </b>{{proveedor.contacto}}</li>
+        <li> <b>Email contacto: </b>{{proveedor.email}}</li>
+        <li> <b>Precio: </b> {{proveedor.precio}}</li>
+      
+{% endfor %}
+
+
+</ul>
+{% else %}
+<p>No hay datos con esa descripción.</p>
+
+{% endif %}
+
+<p style="color: red;">{{respuesta}}</p>
+
+<a href="{% url 'Inicio' %}" class="button" style="color:white"> Volver </a>
+    
+{% endblock %}

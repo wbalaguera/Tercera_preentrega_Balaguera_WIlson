@@ -1,0 +1,18 @@
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    {% for bodega in bodegas %}
+        <li style="color:rgb(7, 45, 95)" >{{bodega}}</li>
+            <button  style="background-color:rgb(11, 3, 77);color:rgb(228, 231, 17)">
+                <a href="{% url 'EliminarBodegas' bodega.nombrebodega %}"> Eliminar</a>
+                <a href="{% url 'EditarBodegas' bodega.nombrebodega %}"> Editar</a>
+            </button>
+        {% endfor %}
+    <br>
+    
+    <a href="{% url 'LeerBodegas' %}" class="button" ;style="color:white"> Volver al listado</a>    
+
+{% endblock %}

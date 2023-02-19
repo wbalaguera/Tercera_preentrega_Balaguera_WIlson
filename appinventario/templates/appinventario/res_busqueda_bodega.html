@@ -1,0 +1,38 @@
+
+
+{% extends "appinventario/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<p style="color:rgb(7, 45, 95)" ><b> Estamos buscando la bodega: </b> {{nombrebodega}}</p>
+
+{% if bodegas %}
+
+<ul style="color:rgb(7, 45, 95)">
+{% for bodega in bodegas %}
+        <h3> <b style="color:rgb(7, 45, 95)">Resultado de Bodega: </b> </h3>
+        <li> <b>Nombre Bodega: </b> {{bodega.nombrebodega}}</li>
+        <li> <b>Ubicacion: </b>  {{bodega.ubicacion}}</li>
+        
+      
+{% endfor %}
+        <p style="color:rgb(227, 243, 7)"> <b>Mapa </b></p>
+        <img src="{% static "appinventario/media/mapa chapinero.PNG" %}" alt="Bogota D.C ,Chapinero" width="700" height="450">
+
+
+</ul>
+
+
+{% else %}
+<p style="color:rgb(208, 243, 7)">No hay datos con esa descripción.</p>
+
+{% endif %}
+
+
+<p style="color: red;">{{respuesta}}</p>
+
+<a href="{% url 'Inicio' %}" class="button" style="color:white"> Volver </a>
+    
+{% endblock %}
